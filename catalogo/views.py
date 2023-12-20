@@ -81,3 +81,7 @@ class DatasetSearchView(generic.ListView):
         else:
             datasets = Dataset.objects.all()
         return datasets.prefetch_related('distribution_set', 'distribution_set__format')
+
+
+class AboutView(generic.TemplateView):
+    template_name = "portal/about.html"

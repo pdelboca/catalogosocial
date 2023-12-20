@@ -13,4 +13,5 @@ urlpatterns = [
         name="distribution",
     ),
     path("search/", views.DatasetSearchView.as_view(), name="search"),
+    path("about/", views.AboutView.as_view(), name="about"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

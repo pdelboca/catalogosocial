@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
 </head>
 <body>
-  <header>
+  <header style="display: flex; justify-content: space-between;">
     <a class="home" href="/">Inicio</a>
+    <a class="home" href="{% url 'about' %}">Acerca de</a>
   </header>
   {% block content %}
   {% endblock %}
