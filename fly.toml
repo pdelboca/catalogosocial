@@ -1,0 +1,38 @@
+# fly.toml app configuration file generated for catalogosocial on 2023-12-10T22:24:56+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "catalogosocial"
+primary_region = "eze"
+console_command = "/code/manage.py shell"
+
+[build]
+
+[env]
+  PORT = "8000"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 4
+  memory_mb = 2048
+
+[[statics]]
+  guest_path = "/code/static"
+  url_prefix = "/static/"
+
+[[statics]]
+  guest_path = "/extvol/media"
+  url_prefix = "/media/"
+
+[mounts]
+  source="catalogosocial_data"
+  destination="/extvol"

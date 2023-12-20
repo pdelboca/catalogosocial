@@ -1,0 +1,37 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+<section style="display: flex; flex-direction: column;">
+  <h1>Catálogo Social</h1>
+    Catálogo de datos abiertos de la República Argentina que apunta a servir como backup ciudadano de los datos estatales.
+  <div style="display: flex; justify-content: space-around; margin-bottom: 15px; text-align: center;">
+    <div>
+      <span style="font-size: 3.5rem; font-weight: 100;">{{datasets}}</span><br>
+      <span>Conjunto de Datos</span>
+    </div>
+    <div>
+      <span style="font-size: 3.5rem; font-weight: 100;">{{distributions}}</span><br>
+      <span">Distribuciones</span>
+    </div>
+  </div>
+  <search>
+    <form style="display: flex; flex-direction: column; align-items: center; gap: 10px;" mehotd="GET" action="{% url 'search' %}">
+      <label for="search" title="Buscar por nombre y descripción del dataset y la distribución.">Buscar en el sitio</label>
+      <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
+      <button type="submit">Buscar</button>
+    </form>
+  </search>
+</section>
+
+{% if catalogs %}
+<section style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-around;">
+  {% for catalog in catalogs %}
+  <article style="width: 250px; cursor: pointer;" onclick="window.location.href = '{% url 'catalog' catalog.pk %}'"
+    onmouseover="this.style.boxShadow='10px 5px 5px var(--lesslight)'" onmouseout="this.style.boxShadow=''">
+    <a style="font-weight: 800;" href="{% url 'catalog' catalog.pk %}">{{catalog.title}}</a>
+    <p><small>{{catalog.description}}</small></p>
+  </article>
+  {% endfor %}
+  {% endif %}
+</section>
+{% endblock %}

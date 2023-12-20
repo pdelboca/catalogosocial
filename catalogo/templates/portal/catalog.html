@@ -1,0 +1,30 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+<section>
+  <h1>{{ catalog.title }}</h1>
+  <p>{{ catalog.description }}</p>
+  <p>
+  <div style="display: flex; justify-content: space-around;">
+    <div><strong>Publicador: </strong>{{ catalog.publisher }}</div>
+    <div><strong>Licencia: </strong>{{ catalog.licence }}</div>
+  </div>
+  </p>
+</section>
+{% if datasets %}
+<section style="display: flex; gap: 10px; flex-direction: column;">
+  <search>
+    <form style="display: flex; flex-direction: column; align-items: center; gap: 10px;" mehotd="GET" action="{% url 'catalog' catalog.pk %}">
+      <label for="search" title="Buscar por nombre y descripción del dataset.">Buscar en catalogo</label>
+      <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
+      <button type="submit">Buscar</button>
+    </form>
+  </search>
+  <h2>Conjunto de Datos</h2>
+  <i>{{datasets|length}} conjunto de datos</i>
+  {% for dataset in datasets %}
+    {% include 'portal/snippets/dataset.html' %}
+  {% endfor %}
+</section>
+{% endif %}
+{% endblock %}

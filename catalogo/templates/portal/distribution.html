@@ -1,0 +1,17 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+<h1>{{ distribution.dataset.catalog.title }}</h1>
+<section>
+  <h2>Distribución: {{ distribution.title }}</h2>
+  <p><i>Descripción: {{ distribution.description }}</i></p>
+  <p>
+    <strong>Licencia: </strong> {% if distribution.licence %}{{ distribution.licence }} {% elif distribution.dataset.catalog.licence %} {{ distribution.dataset.catalog.licence }} {% else %} Not specified. {% endif %} <br>
+    <strong>Formato: </strong>{{ distribution.format }} <br>
+  </p>
+  <p>
+    <strong>Página Oficial: </strong><br><a href="{{ distribution.extras.original_access_url }}">{{distribution.extras.original_access_url }}</a> <br>
+    <strong>Descarga Oficial: </strong><br><a href="{{ distribution.extras.original_download_url }}">{{distribution.extras.original_download_url }}</a> <br>
+  </p>
+</section>
+{% endblock %}

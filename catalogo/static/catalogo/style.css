@@ -1,0 +1,27 @@
+:root {
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: normal;
+}
+
+body {
+    max-width: 900px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #25a79b;
+}
+
+article {
+    padding: 20px;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+}
+
+article > h3 {
+    margin-top: 0;
+}
+
+section {
+    margin-bottom: 20px;
+}

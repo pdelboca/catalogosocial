@@ -1,0 +1,14 @@
+<article>
+  <h3>{{ dataset.title }}</h3>
+  <p><small>{{ dataset.description }}</small></p>
+  <details style="cursor: pointer;">
+    <summary>Distribuciones ({{dataset.distribution_set.all|length}})</summary>
+    <ul>
+      {% for distribution in dataset.distribution_set.all %}
+      <li><a href="{% url 'distribution' distribution.pk %}">{{distribution.title|truncatechars:60}}</a> -
+        <small>{{distribution.format}}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </details>
+</article>

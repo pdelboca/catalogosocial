@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Social</title>
+  <link rel="stylesheet" href="{% static 'catalogo/neat.css' %}">
+  <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
+</head>
+<body>
+  <header>
+    <a class="home" href="/">Inicio</a>
+  </header>
+  {% block content %}
+  {% endblock %}
+  <footer style="text-align: center;">
+    <p>
+      Realizado con <a href="https://github.com/pdelboca/django-dcat/">django-dcat</a>, <a href="https://neat.joeldare.com/">Neat CSS</a> y ❤️.
+    </p>
+  </footer>
+</body>
+</html>
