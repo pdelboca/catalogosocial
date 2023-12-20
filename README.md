@@ -12,9 +12,26 @@ Catálogo Social es un portal de datos abiertos simple y basado en DCAT. Actualm
 enlace de descarga a los portales oficiales. Toda su información se importa desde data.json provistos por los Portales de
 Datos Abiertos de la República Argentina. (Por ejemplo: https://datos.gob.ar/data.json o https://datos.yvera.gob.ar/data.json)
 
+## Desarrollo local
+
+1. Crear un entorno virtual:
+
+    `pip -m venv .venv`
+2. Instalar los requerimientos:
+
+    `pip install -r requirements.txt -r dev-requirements.txt`
+
+3. Correr migraciones
+
+    `python manage.py migrate`
+
+4. Ejecutar el servidor de desarrollo
+
+    `python manage.py runserver`
+
 ## Notas sobre el desarrollo
 
 A nivel técnico, el portal está hecho en Django, HTML y CSS. Busca ser sencillo, facil de desarrollar y desplegar. Sin
 sobre ingeniería ni optimización prematura.
 
-Está hecho con amor y en los ratos libres.
+Está hecho con ❤️ y en los ratos libres.
