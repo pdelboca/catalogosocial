@@ -1,7 +1,7 @@
 <article>
   <h3>{{ dataset.title }}</h3>
   <p><small>{{ dataset.description }}</small></p>
-  <details style="cursor: pointer;">
+  <details style="cursor: pointer; margin-bottom: 10px;">
     <summary>Distribuciones ({{dataset.distribution_set.all|length}})</summary>
     <ul>
       {% for distribution in dataset.distribution_set.all %}
@@ -11,4 +11,9 @@
       {% endfor %}
     </ul>
   </details>
+  <div style="display: flex; flex-wrap: wrap;">
+    {% for theme in dataset.themes.all %}
+      <span class="theme-tag">{{theme}}</span>
+    {% endfor %}
+    </div>
 </article>

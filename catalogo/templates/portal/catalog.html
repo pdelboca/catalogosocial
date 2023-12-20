@@ -3,6 +3,7 @@
 {% block content %}
 <section>
   <h1>{{ catalog.title }}</h1>
+  <strong>Sitio Oficial:</strong> {% if catalog.homepage %} <a href="{{catalog.homepage}}">{{catalog.homepage}}</a> {% else %} No disponible {% endif %}
   <p>{{ catalog.description }}</p>
   <p>
   <div style="display: flex; justify-content: space-around;">
@@ -10,12 +11,17 @@
     <div><strong>Licencia: </strong>{{ catalog.licence }}</div>
   </div>
   </p>
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+  {% for theme in catalog.themes.all %}
+    <span class="theme-tag">{{theme}}</span>
+  {% endfor %}
+  </div>
 </section>
 {% if datasets %}
 <section style="display: flex; gap: 10px; flex-direction: column;">
   <search>
     <form style="display: flex; flex-direction: column; align-items: center; gap: 10px;" mehotd="GET" action="{% url 'catalog' catalog.pk %}">
-      <label for="search" title="Buscar por nombre y descripción del dataset.">Buscar en catalogo</label>
+      <label for="search" title="Buscar por nombre y descripción del dataset."><strong>Buscar en el catalogo</strong></label>
       <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
       <button type="submit">Buscar</button>
     </form>
