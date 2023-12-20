@@ -1,0 +1,12 @@
+.venv
+.env
+
+db.sqlite3
+*.pyc
+
+data/
+data.json
+media/
+staticfiles/
+
+filetypes.xml

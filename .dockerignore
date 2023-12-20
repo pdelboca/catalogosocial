@@ -1,0 +1,11 @@
+fly.toml
+.git/
+*.sqlite3
+.venv/
+.env
+data/
+media/
+staticfiles/
+data.json
+filetypes.xml
+__pycache__
