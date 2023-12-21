@@ -14,4 +14,5 @@ urlpatterns = [
     ),
     path("search/", views.DatasetSearchView.as_view(), name="search"),
     path("about/", views.AboutView.as_view(), name="about"),
+    path("keyword/<slug:slug>/", views.KeywordSearchView.as_view(), name="keyword"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

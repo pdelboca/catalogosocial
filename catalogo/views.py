@@ -25,6 +25,7 @@ class IndexView(generic.ListView):
         context["distributions"] = Distribution.objects.count()
         return context
 
+
 def _dataset_contains_queryset(q):
     """Returns dataset queryset filtered by q
 
@@ -33,8 +34,8 @@ def _dataset_contains_queryset(q):
     """
     # Get all distributions containing q
     distributions = Distribution.objects.filter(
-                Q(title__icontains=q) | Q(description__icontains=q)
-            )
+        Q(title__icontains=q) | Q(description__icontains=q)
+    )
     _pks = [d.dataset.pk for d in distributions]
 
     # Get datasets containing q or matching pks of distributions' dataset
@@ -57,7 +58,9 @@ class CatalogDetailView(generic.DetailView):
             datasets = _dataset_contains_queryset(q).filter(catalog=catalog)
         else:
             datasets = Dataset.objects.filter(catalog=catalog)
-        context["datasets"] = datasets.prefetch_related('distribution_set', 'distribution_set__format')
+        context["datasets"] = datasets.prefetch_related(
+            "distribution_set", "distribution_set__format", "keywords"
+        )
         return context
 
 
@@ -80,7 +83,20 @@ class DatasetSearchView(generic.ListView):
             datasets = _dataset_contains_queryset(q)
         else:
             datasets = Dataset.objects.all()
-        return datasets.prefetch_related('distribution_set', 'distribution_set__format')
+        return datasets.prefetch_related("distribution_set", "distribution_set__format", "keywords")
+
+
+class KeywordSearchView(generic.ListView):
+    template_name = "portal/keywords.html"
+    context_object_name = "datasets"
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug")
+        if slug:
+            datasets = Dataset.objects.filter(keywords__slug=slug)
+        else:
+            datasets = Dataset.objects.all()
+        return datasets.prefetch_related("distribution_set", "distribution_set__format", "keywords")
 
 
 class AboutView(generic.TemplateView):

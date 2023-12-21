@@ -12,8 +12,8 @@
     </ul>
   </details>
   <div style="display: flex; flex-wrap: wrap;">
-    {% for theme in dataset.themes.all %}
-      <span class="theme-tag">{{theme}}</span>
+    {% for keyword in dataset.keywords.all %}
+      <a class="tag" href="{% url 'keyword' keyword.slug %}">{{keyword}}</a>
     {% endfor %}
     </div>
 </article>

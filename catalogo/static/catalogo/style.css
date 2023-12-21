@@ -27,7 +27,7 @@ section {
     margin-bottom: 20px;
 }
 
-.theme-tag {
+.tag {
     background-color: var(--lesslight);
     color: var(--dark);
     border-radius: 5px;
