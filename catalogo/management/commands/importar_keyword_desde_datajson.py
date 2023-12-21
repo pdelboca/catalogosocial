@@ -27,7 +27,7 @@ class Command(BaseCommand):
                 extras__original_id=identifier, catalog=catalog
             )
 
-            for keyword in dataset["keyword"]:
+            for keyword in dataset.get("keyword",[]):
                 keyword_obj, _ = Keyword.objects.get_or_create(
                     name=keyword, slug=slugify(keyword)
                 )
