@@ -17,4 +17,6 @@ section {
     font-size: 0.75rem;
     margin: 5px;
     padding: 5px;
+    color: inherit;
+    text-decoration: none;
 }
