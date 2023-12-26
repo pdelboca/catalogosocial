@@ -1,26 +1,10 @@
 :root {
-    --theme-color: #178a7e;
+    --theme-color: rgba(23, 138, 126, 1);
+    --shadow-color: rgba(23, 138, 126, 0.5);
+    --max-width: 1000px;
     font-family: sans-serif;
     font-size: 20px;
     line-height: normal;
-}
-
-body {
-    max-width: 900px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--theme-color);
-}
-
-article {
-    padding: 20px;
-    border: 1px solid var(--dark);
-    border-radius: 5px;
-}
-
-article > h3 {
-    margin-top: 0;
 }
 
 section {
@@ -28,8 +12,7 @@ section {
 }
 
 .tag {
-    background-color: var(--lesslight);
-    color: var(--dark);
+    background-color: var(--shadow-color);
     border-radius: 5px;
     font-size: 0.75rem;
     margin: 5px;

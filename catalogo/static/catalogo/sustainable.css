@@ -1,0 +1,81 @@
+/*!
+ * Sustainable CSS v0.0.2 (https://github.com/pdelboca/sustainable-css/)
+ * Copyright 2023 - Licensed under MIT
+ */
+
+ :root {
+    color-scheme: light dark;
+    line-height: 1.5em;
+    font-family: sans-serif;
+    --theme-color: rgba(0, 119, 204);
+    --max-width: 800px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: var(--max-width);
+    padding: 0 20px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+fieldset, input, select, textarea, button {
+    margin: 0.25em;
+    max-width: 100%;
+    font-size: 1em;
+    border-radius: .25em;
+    padding: .5em;
+ }
+
+fieldset, input:not([type=submit]), select, textarea {
+    border: 1px solid var(--theme-color);
+}
+
+button + button, input[type=submit] + input[type=submit] {
+    margin-left: 1em;
+}
+
+button, input[type=submit], input[type=reset] {
+    cursor: pointer;
+}
+
+ul > li, ol > li {
+    margin: 0.125em;
+}
+
+header > nav > * > a, header > nav > a {
+    font-size: larger;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+/* Branding and colors */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--theme-color);
+}
+a:hover {
+    font-weight: bold;
+}
+input {
+    accent-color: var(--theme-color);
+}
+
+/* Article */
+article {
+    border: 1px solid;
+    border-radius: .25em;
+    padding: 0em 0.5em 0.5em 0.5em;
+}
+article > footer {
+    font-size: 0.9em;
+    text-align: right;
+}
+

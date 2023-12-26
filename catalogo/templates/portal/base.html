@@ -6,19 +6,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo Social</title>
-  <link rel="stylesheet" href="{% static 'catalogo/neat.css' %}">
+  <link rel="stylesheet" href="{% static 'catalogo/sustainable.css' %}">
   <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
 </head>
 <body>
-  <header style="display: flex; justify-content: space-between;">
-    <a class="home" href="/">Inicio</a>
-    <a class="home" href="{% url 'about' %}">Acerca de</a>
+  <header>
+    <nav style="display: flex; justify-content: space-between;">
+      <a class="home" href="/">Inicio</a>
+      <a class="home" href="{% url 'about' %}">Acerca de</a>
+    </nav>
   </header>
   {% block content %}
   {% endblock %}
   <footer style="text-align: center;">
     <p>
-      Realizado con <a href="https://github.com/pdelboca/django-dcat/">django-dcat</a>, <a href="https://neat.joeldare.com/">Neat CSS</a> y ❤️.
+      Realizado con <a href="https://github.com/pdelboca/django-dcat/">django-dcat</a>, <a href="https://github.com/pdelboca/sustainable-css">Sustainable.css</a> y ❤️.
     </p>
   </footer>
 </body>

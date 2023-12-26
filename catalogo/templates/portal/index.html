@@ -3,7 +3,9 @@
 {% block content %}
 <section style="display: flex; flex-direction: column;">
   <h1>Catálogo Social</h1>
+  <p>
     Catálogo de datos abiertos de la República Argentina que apunta a servir como backup ciudadano de los datos estatales.
+  </p>
   <div style="display: flex; justify-content: space-around; margin-bottom: 15px; text-align: center;">
     <div>
       <span style="font-size: 3.5rem; font-weight: 100;">{{datasets}}</span><br>
@@ -15,8 +17,8 @@
     </div>
   </div>
   <search>
-    <form style="display: flex; flex-direction: column; align-items: center; gap: 10px;" mehotd="GET" action="{% url 'search' %}">
-      <label for="search" title="Buscar por nombre y descripción del dataset y la distribución.">Buscar en el sitio</label>
+    <form mehotd="GET" action="{% url 'search' %}">
+      <label for="search" title="Buscar por nombre y descripción del dataset y la distribución."><strong>Buscar en el sitio:</strong></label>
       <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
       <button type="submit">Buscar</button>
     </form>
@@ -26,10 +28,10 @@
 {% if catalogs %}
 <section style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-around;">
   {% for catalog in catalogs %}
-  <article style="width: 250px; cursor: pointer;" onclick="window.location.href = '{% url 'catalog' catalog.pk %}'"
-    onmouseover="this.style.boxShadow='10px 5px 5px var(--lesslight)'" onmouseout="this.style.boxShadow=''">
-    <a style="font-weight: 800;" href="{% url 'catalog' catalog.pk %}">{{catalog.title}}</a>
-    <p><small>{{catalog.description}}</small></p>
+  <article style="width: 250px;" onmouseover="this.style.boxShadow='10px 5px 5px var(--shadow-color)'" onmouseout="this.style.boxShadow=''">
+    <h3>{{catalog.title}}</h3>
+    <p><small>{{catalog.description|truncatechars:150}}</small></p>
+    <footer><a href="{% url 'catalog' catalog.pk %}">Ir al catalogo</a></footer>
   </article>
   {% endfor %}
   {% endif %}
