@@ -1,36 +1,43 @@
 {% extends 'portal/base.html' %}
 
 {% block content %}
-  <h1>Catálogo Social</h1>
-    <p>Catálogo de datos abiertos de la República Argentina que apunta* a servir como backup ciudadano de los datos estatales.</p>
-    <p><i>* no es exhaustivo, hice lo que pude.</i></p>
-  <h2>Historia</h2>
-    <p>Catálogo Social nace en 2023 como una iniciativa de la sociedad civil para preservar los datos abiertos del Estado Argentino ante un posible
-    recorte de las áreas que lo publican. Para más información del contexto, podés leer <a href="https://bit.ly/CartaDatosAbiertos">la carta de la comunidad datera argentina</a>.</p>
-  <h2>¿Cómo funciona?</h2>
-    <p>Los portales de datos abiertos de la república argentina publican un archivo <a href="https://datos.gob.ar/data.json">data.json</a> que contiene
-    los metadatos de los conjunto de datos y distribuciones que publican. Catálogo Social se encarga de descargar ese archivo y almacenar una copia de los metadatos en una base de datos.
-    Luego, los usuarios pueden buscar y acceder a los archivos desde el portal de datos abiertos que lo publica.</p>
-    <p>Si bien Catálogo Social contiene una copia de todos los conjunto de datos, solo se muestran los metadatos y <strong>se redirige a los usuarios al portal de datos abiertos oficial que lo publica</strong>.
-    Si en un futuro los portales de datos abiertos dejan de funcionar, Catálogo Social va a poner a disposición una copia de los archivos para que los usuarios puedan descargarlos.</p>
-    <h3>¿Qué es un archivo data.json?</h3>
-    <p> Es un archivo en formato JSON que contiene los metadatos de los conjunto de datos y distribuciones que publica un portal de datos abiertos. Los metadatos son información sobre los datos,
-    como por ejemplo el título, la descripción, la fecha de publicación, etc.</p>
-    <p>Ejemplos:
-    <ul>
-        <li><a href="https://datos.gob.ar/data.json">https://datos.gob.ar/data.json</a></li>
-        <li><a href="https://datos.yvera.gob.ar/data.json">https://datos.yvera.gob.ar/data.json</a></li>
-    </ul>
-    </p>
-    <h2>¿Es el objetivo reemplazar los portales oficiales?</h2>
-    <p>No.</p>
-    <p>Lo hice simplemente por un amor a la preservación de todo el trabajo realizado y es por ello que la descarga será siempre desde los portales oficiales (mientras existan).</p>
-   <h2>¿Cómo puedo colaborar?</h2>
-   <p>
-    <ul>
-      <li>Sé amable con quien lo desarrolla, es un proyecto voluntario que nadie financia.</li>
-      <li>El código de este portal es abierto y se encuentra disponible en <a href="https://github.com/pdelboca/catalogosocial">https://github.com/pdelboca/catalogosocial</a>.</li>
-      <li>Puedes proveer feedback o sugerencias en el repositorio.</li>
-     </ul>
-    </p>
+<h1>Catálogo Social</h1>
+<p>Catálogo Social es un proyecto de Open Data Córdoba, aquí subiremos todos los datasets que hemos generado
+  históricamente y brindaremos un espacio
+  por si otras organizaciones quieren sumarse a publicar datos.</p>
+<h2>¿Qué datos hay publicados en el sitio?</h2>
+<p>
+  En este sitio publicaremos datos que hemos ido recopilando a través de los años. Los mismos no son de una temática en
+  particular, son datos que
+  hemos recolectado en el tiempo y queremos ponerlos a disposición de quienes quieran reutilizarlos.
+</p>
+<h2>¿Qué licencia tienen?</h2>
+<p>Cada distribución (es decir, cada archivo publicado) contiene un tipo de licencia abierta que permite su
+  reutilización. Los detalles se podrán ver en la página
+  de cada distribución.</p>
+<h2>¿Puedo usar este portal para publicar mis datos?</h2>
+<p>Por supuesto! El objetivo de Catálogo Social es que todos aquellos que quieran publicar datos tengan un espacio para
+  hacerlo. Ponete en contacto con nosotros y te
+  y crearemos un Catálogo para tu organización y/o iniciativa.
+</p>
+<p>Nuestra visión es que Catálogo Social se convierta en un repositorio colaborativo de individuos y organizaciones que
+  quieran publicar datos pero no cuentan
+  con la infraestructura para hacerlo.</p>
+<h2>¿Y les tengo que entregar mis datos?</h2>
+<p>No necesariamente. Catálogo Social, como su nombre lo indica, es un catálogo. Solo ordena y visibiliza tus datos.
+  Tranquilamente puedes crear una distribución que contenga un enlace
+  de descarga a tus servidores. </p>
+<p>De esta forma, tus datos quedan en tu infraestructura y desde Catálogo Social le hacemos referencia.</p>
+<h2>¿Cobran algo?</h2>
+<p>De momento no. Pero si querés que te almacenemos 1TB de información pues entonces quizá dividamos
+  gastos de alojamiento :D</p>
+<h2>¿Cómo puedo colaborar?</h2>
+<p>
+<ul>
+  <li>Sé amable con quien lo desarrolla. Es un proyecto voluntario que, por ahora, nadie financia.</li>
+  <li>El código de este portal es abierto y se encuentra disponible en <a
+      href="https://github.com/pdelboca/catalogosocial">https://github.com/pdelboca/catalogosocial</a>.</li>
+  <li>Puedes proveer feedback o sugerencias en el repositorio.</li>
+</ul>
+</p>
 {% endblock %}
