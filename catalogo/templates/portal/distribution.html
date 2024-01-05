@@ -10,8 +10,12 @@
     <strong>Formato: </strong>{{ distribution.format }} <br>
   </p>
   <p>
-    <strong>Página Oficial: </strong><br><a href="{{ distribution.extras.original_access_url }}">{{distribution.extras.original_access_url }}</a> <br>
-    <strong>Descarga Oficial: </strong><br><a href="{{ distribution.extras.original_download_url }}">{{distribution.extras.original_download_url }}</a> <br>
+    {% if distribution.external_access_url %}
+    <strong>Página Oficial: </strong>
+    <br>
+    <a href="{{ distribution.external_access_url }}">{{distribution.external_access_url }}</a> <br>
+    {% endif %}
+    <strong>Descarga: </strong><br><a href="{{ distribution.download_url }}">{{distribution.download_url }}</a> <br>
   </p>
 </section>
 {% endblock %}

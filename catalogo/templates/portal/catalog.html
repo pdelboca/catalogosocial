@@ -3,7 +3,7 @@
 {% block content %}
 <section>
   <h1>{{ catalog.title }}</h1>
-  <strong>Sitio Oficial:</strong> {% if catalog.homepage %} <a href="{{catalog.homepage}}">{{catalog.homepage}}</a> {% else %} No disponible {% endif %}
+  {% if catalog.homepage %} <strong>Sitio Oficial:</strong> <a href="{{catalog.homepage}}">{{catalog.homepage}}</a> {% endif %}
   <p>{{ catalog.description }}</p>
   <p>
   <div style="display: flex; justify-content: space-around;">
