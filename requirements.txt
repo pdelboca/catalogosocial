@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
--e git+https://github.com/pdelboca/django-dcat.git@v0.0.4#egg=django_dcat
+-e git+https://github.com/pdelboca/django-dcat.git@v0.0.5#egg=django_dcat
     # via -r requirements.in
 asgiref==3.7.2
     # via django
