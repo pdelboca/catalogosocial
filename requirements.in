@@ -1,4 +1,4 @@
 django==5.0.0
--e git+https://github.com/pdelboca/django-dcat.git@v0.0.7#egg=django_dcat
+-e git+https://github.com/pdelboca/django-dcat.git@v0.0.8#egg=django_dcat
 python-dotenv==1.0.0
 gunicorn==21.2.0
