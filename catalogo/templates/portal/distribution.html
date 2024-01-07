@@ -15,7 +15,9 @@
     <br>
     <a href="{{ distribution.external_access_url }}">{{distribution.external_access_url }}</a> <br>
     {% endif %}
+    {% if distribution.download_url %}
     <strong>Descarga: </strong><br><a href="{{ distribution.download_url }}">{{distribution.download_url }}</a> <br>
+    {% endif %}
   </p>
 </section>
 {% endblock %}
