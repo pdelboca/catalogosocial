@@ -1,6 +1,9 @@
 /*!
- * Sustainable CSS v0.0.4 (https://github.com/pdelboca/sustainable-css/)
+ * Sustainable CSS v0.0.5 (https://github.com/pdelboca/sustainable-css/)
  * Copyright 2023 - Licensed under MIT
+ *
+ * Sustainable CSS reuses system colors:
+ * https://drafts.csswg.org/css-color-4/#css-system-colors
  */
 
  :root {
@@ -35,7 +38,7 @@ fieldset, input, select, textarea, button {
  }
 
 fieldset, input:not([type=submit]), select, textarea {
-    border: 1px solid var(--theme-color);
+    border: 1px solid;
 }
 
 button, input[type=submit], input[type=reset] {
@@ -52,9 +55,16 @@ header > nav > * > a, header > nav > a {
     margin: 0 0.5em;
 }
 
+details > summary {
+    cursor: pointer;
+}
+
 /* Branding and colors */
 h1, h2, h3, h4, h5, h6 {
     color: var(--theme-color);
+}
+a {
+    color: canvastext;
 }
 a:hover {
     font-weight: bold;
