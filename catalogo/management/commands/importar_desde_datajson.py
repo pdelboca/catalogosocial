@@ -25,8 +25,6 @@ from dcat.models import (
     DataTheme,
 )
 
-from catalogo.models import DatasetExtras, DistributionExtras
-
 
 class Command(BaseCommand):
     help = "Import data from a DCAT-US file provided by ckanext-datajson."
@@ -118,13 +116,6 @@ class Command(BaseCommand):
             )
             dataset_info["catalog"] = catalog
             dataset_created = Dataset.objects.create(**dataset_info)
-
-            _dataset_extras = DatasetExtras.objects.create(
-                dataset=dataset_created,
-                original_landing_page=dataset.get("landingPage"),
-                original_id=dataset.get("identifier", ""),
-            )
-            dataset_created.extras = _dataset_extras
             dataset_created.save()
 
             for theme in dataset.get("theme", []):
@@ -171,14 +162,6 @@ class Command(BaseCommand):
                     distribution_info["licence"] = licence
 
                 distribution_created = Distribution.objects.create(**distribution_info)
-
-                _distribution_extras = DistributionExtras.objects.create(
-                    distribution=distribution_created,
-                    original_access_url=distribution.get("accessURL"),
-                    original_download_url=distribution.get("downloadURL"),
-                    original_id=distribution.get("identifier", ""),
-                )
-                distribution_created.extras = _distribution_extras
                 distribution_created.save()
 
         self.stdout.write(self.style.SUCCESS("Data imported successfully"))
