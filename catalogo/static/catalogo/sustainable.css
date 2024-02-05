@@ -1,5 +1,5 @@
 /*!
- * Sustainable CSS v0.0.5 (https://github.com/pdelboca/sustainable-css/)
+ * Sustainable CSS v0.0.6 (https://github.com/pdelboca/sustainable-css/)
  * Copyright 2023 - Licensed under MIT
  *
  * Sustainable CSS reuses system colors:
@@ -9,7 +9,7 @@
  :root {
     color-scheme: light dark;
     font-family: sans-serif;
-    --theme-color: rgba(0, 119, 204);
+    --color-10: rgba(0, 119, 204);
     --max-width: 800px;
 }
 
@@ -37,11 +37,15 @@ fieldset, input, select, textarea, button {
     padding: .5em;
  }
 
+button {
+    border-width: 1px;
+}
+
 fieldset, input:not([type=submit]), select, textarea {
     border: 1px solid;
 }
 
-button, input[type=submit], input[type=reset] {
+input[type=submit], input[type=reset], button[type=submit] {
     cursor: pointer;
 }
 
@@ -60,17 +64,31 @@ details > summary {
 }
 
 /* Branding and colors */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--theme-color);
-}
 a {
-    color: canvastext;
+    color: inherit;
+    text-decoration-color: var(--color-10);
 }
+
 a:hover {
     font-weight: bold;
 }
+
 input {
-    accent-color: var(--theme-color);
+    accent-color: var(--color-10);
+}
+
+input[type=submit], input[type=reset], button[type=submit] {
+    background-color: var(--color-10);
+    color: canvas;
+}
+
+fieldset {
+    border-color: var(--color-10);
+}
+
+mark {
+    background-color: var(--color-10);
+    color: canvas;
 }
 
 /* Article */

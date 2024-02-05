@@ -1,5 +1,5 @@
 :root {
-    --theme-color: rgba(23, 138, 126, 1);
+    --color-10: rgba(23, 138, 126, 1);
     --shadow-color: rgba(23, 138, 126, 0.5);
     --max-width: 1000px;
     font-family: sans-serif;

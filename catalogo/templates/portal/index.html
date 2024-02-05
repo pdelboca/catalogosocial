@@ -1,35 +1,34 @@
 {% extends "portal/base.html" %}
 
 {% block content %}
-<section style="display: flex; flex-direction: column;">
-  <h1>Catálogo Social</h1>
+<section>
+  <h1 style="margin-bottom: 0px;">Catálogo Social</h1>
   <p>
-    Catálogo Social es un proyecto de Open Data Córdoba, aquí subiremos todos los datasets que hemos generado históricamente y brindaremos un espacio
-    por si otras organizaciones quieren sumarse a publicar datos.
-
+    Catálogo Social es un proyecto de Open Data Córdoba, aquí subiremos datasets que hemos generado históricamente y brindaremos espacio
+    a otras organizaciones quieren sumarse a publicar datos.
     ¿Tenés datos y te gustaría publicarlos? Escribinos a <a href="mailto:opendatacba@gmail.com">opendatacba@gmail.com</a>
   </p>
-  <div style="display: flex; justify-content: space-around; margin-bottom: 15px; text-align: center;">
-    <div>
-      <span style="font-size: 3.5rem; font-weight: 100;">{{datasets}}</span><br>
-      <span>Conjunto de Datos</span>
-    </div>
-    <div>
-      <span style="font-size: 3.5rem; font-weight: 100;">{{distributions}}</span><br>
-      <span">Distribuciones</span>
-    </div>
-  </div>
-  <search>
-    <form mehotd="GET" action="{% url 'search' %}">
-      <label for="search" title="Buscar por nombre y descripción del dataset y la distribución."><strong>Buscar en el sitio:</strong></label>
-      <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
-      <button type="submit">Buscar</button>
-    </form>
-  </search>
 </section>
+<div style="display: flex; justify-content: space-around; margin-top: 30px; margin-bottom: 40px; text-align: center;">
+  <div>
+    <span style="font-size: 3.5rem; font-weight: 800; color: var(--color-10);">{{datasets}}</span><br>
+    <span>Conjunto de Datos</span>
+  </div>
+  <div>
+    <span style="font-size: 3.5rem; font-weight: 800; color: var(--color-10);">{{distributions}}</span><br>
+    <span">Distribuciones</span>
+  </div>
+</div>
+<search>
+  <form mehotd="GET" action="{% url 'search' %}">
+    <label for="search" title="Buscar por nombre y descripción del dataset y la distribución."><strong>Buscar en el sitio:</strong></label>
+    <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
+    <button type="submit">Buscar</button>
+  </form>
+</search>
 
 {% if catalogs %}
-<section style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-around;">
+<section style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-around; margin: 40px 0px;">
   {% for catalog in catalogs %}
   <article style="width: 250px;" onmouseover="this.style.boxShadow='10px 5px 5px var(--shadow-color)'" onmouseout="this.style.boxShadow=''">
     <h3>{{catalog.title}}</h3>
