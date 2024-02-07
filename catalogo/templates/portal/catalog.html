@@ -1,8 +1,9 @@
 {% extends "portal/base.html" %}
 
 {% block content %}
+<main>
 <section>
-  <h1 style="margin-bottom: 0px;">{{ catalog.title }}</h1>
+  <h1>{{ catalog.title }}</h1>
   {% if catalog.homepage %} <strong>Sitio Oficial:</strong> <a href="{{catalog.homepage}}">{{catalog.homepage}}</a> {% endif %}
   <p>{{ catalog.description }}</p>
   <p>
@@ -18,19 +19,19 @@
   </div>
 </section>
 {% if datasets %}
-<section style="display: flex; gap: 10px; flex-direction: column;">
-  <search>
-    <form mehotd="GET" action="{% url 'catalog' catalog.pk %}">
-      <label for="search" title="Buscar por nombre y descripción del dataset."><strong>Buscar en el catálogo: </strong></label>
-      <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
-      <button type="submit">Buscar</button>
-    </form>
-  </search>
-  <h2>Conjunto de Datos</h2>
-  <i>{{datasets|length}} conjunto de datos</i>
+<search>
+  <form mehotd="GET" action="{% url 'catalog' catalog.pk %}">
+    <label for="search" title="Buscar por nombre y descripción del dataset."><strong>Buscar en el catálogo: </strong></label>
+    <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
+    <button type="submit">Buscar</button>
+  </form>
+</search>
+<div style="text-align: right; font-size: smaller; margin-top: 1rem;"><i>{{datasets|length}} conjunto(s) de dato(s).</i></div>
+<section style="display: flex; gap: 2rem; flex-direction: column; margin-top: 1rem;">
   {% for dataset in datasets %}
     {% include 'portal/snippets/dataset.html' %}
   {% endfor %}
 </section>
+</main>
 {% endif %}
 {% endblock %}

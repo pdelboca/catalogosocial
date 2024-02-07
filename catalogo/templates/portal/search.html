@@ -1,18 +1,20 @@
 {% extends 'portal/base.html' %}
 
 {% block content %}
+<main>
 <section  style="display: flex; gap: 10px; flex-direction: column;">
 <h1>Search Results</h1>
 <search>
-  <form style="display: flex; flex-direction: column; align-items: center; gap: 10px;" mehotd="GET" action="{% url 'search' %}">
+  <form style="display: flex; align-items: center; gap: 10px;" mehotd="GET" action="{% url 'search' %}">
     <label for="search" title="Buscar por nombre y descripción del dataset.">Buscar en el sitio</label>
     <input type="search" id="search" name="q" value="{{request.GET.q}}" placeholder="¿Qué dataset buscás?" />
     <button type="submit">Buscar</button>
   </form>
 </search>
-<p>Found {{datasets|length}} datasets</p>
+<div style="text-align: right; font-size: smaller; margin-top: 1rem;"><i>{{datasets|length}} conjunto(s) de dato(s).</i></div>
 {% for dataset in datasets %}
   {% include 'portal/snippets/dataset.html' %}
 {% endfor %}
 </section>
+</main>
 {% endblock %}

@@ -1,6 +1,6 @@
 /*!
- * Sustainable CSS v0.0.6 (https://github.com/pdelboca/sustainable-css/)
- * Copyright 2023 - Licensed under MIT
+ * Sustainable CSS v0.0.7 (https://github.com/pdelboca/sustainable-css/)
+ * Copyright 2023 by Patricio Del Boca - Licensed under MIT
  *
  * Sustainable CSS reuses system colors:
  * https://drafts.csswg.org/css-color-4/#css-system-colors
@@ -18,10 +18,32 @@
 }
 
 body {
+    line-height: 1.65;
+    font-size: 1.15rem;
+    margin-top: 0;
+}
+
+main {
     max-width: var(--max-width);
-    padding: 0 20px 20px 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 4vb auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+/*
+* Setting margins to 0 to avoid margin collapse:
+* https://www.joshwcomeau.com/css/rules-of-margin-collapse/
+*/
+    margin:0;
+}
+
+p ~ p {
+    margin-bottom: 0.75rem;
 }
 
 img {
@@ -49,10 +71,6 @@ input[type=submit], input[type=reset], button[type=submit] {
     cursor: pointer;
 }
 
-ul > li, ol > li {
-    margin: 0.125em;
-}
-
 header > nav > * > a, header > nav > a {
     font-size: larger;
     text-decoration: none;
@@ -61,11 +79,13 @@ header > nav > * > a, header > nav > a {
 
 details > summary {
     cursor: pointer;
+    padding: 0.5em;
 }
 
 /* Branding and colors */
 a {
     color: inherit;
+    font-size: inherit;
     text-decoration-color: var(--color-10);
 }
 
@@ -95,10 +115,12 @@ mark {
 article {
     border: 1px solid;
     border-radius: .25em;
-    padding: 0em 0.5em 0.5em 0.5em;
+    padding: 0.5em;
 }
-article > footer {
-    font-size: 0.9em;
+article footer {
+    font-size: 0.9rem;
     text-align: right;
 }
-
+article footer, article > p + p {
+    margin-top: 1rem;
+  }

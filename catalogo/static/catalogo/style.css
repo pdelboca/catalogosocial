@@ -7,6 +7,11 @@
     line-height: normal;
 }
 
+main > h2 {
+    /* Separador para la página About.*/
+    margin-top: 3rem;
+}
+
 section {
     margin-bottom: 20px;
 }

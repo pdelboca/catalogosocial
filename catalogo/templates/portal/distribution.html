@@ -1,6 +1,7 @@
 {% extends "portal/base.html" %}
 
 {% block content %}
+<main>
 <h1>{{ distribution.dataset.catalog.title }}</h1>
 <section>
   <h2>Distribución: {{ distribution.title }}</h2>
@@ -20,4 +21,5 @@
     {% endif %}
   </p>
 </section>
+</main>
 {% endblock %}

@@ -1,9 +1,11 @@
 {% extends "portal/base.html" %}
 {% load static %}
 {% block content %}
+<main>
     <h1>Datasets in {{request.resolver_match.kwargs.slug}}</h1>
-    <p>Found {{datasets|length}} datasets</p>
+    <div style="text-align: right; font-size: smaller; margin-top: 1rem;"><i>{{datasets|length}} conjunto(s) de dato(s).</i></div>
     {% for dataset in datasets %}
       {% include "portal/snippets/dataset.html" %}
     {% endfor %}
+</main>
 {% endblock %}
