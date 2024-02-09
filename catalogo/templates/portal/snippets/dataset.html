@@ -1,6 +1,6 @@
-<article>
+<article style="border: none; border-left: solid 5px var(--color-10);">
   <h3>{{ dataset.title }}</h3>
-  <p><small>{{ dataset.description }}</small></p>
+  <p style="font-size: smaller; margin-top: 0.5em;">{{ dataset.description }}</p>
   {% if dataset.distribution_set.all %}
   <details style="cursor: pointer; margin-bottom: 10px;">
     <summary>Distribuciones ({{dataset.distribution_set.all|length}})</summary>

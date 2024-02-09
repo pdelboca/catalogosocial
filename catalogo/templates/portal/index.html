@@ -32,8 +32,8 @@
 <section style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-around; margin: 40px 0px;">
   {% for catalog in catalogs %}
   <article style="width: 250px; display: flex; flex-direction: column;" onmouseover="this.style.boxShadow='10px 5px 5px var(--shadow-color)'" onmouseout="this.style.boxShadow=''">
-    <h4>{{catalog.title}}</h4>
-    <p style="padding: 0.5rem 0; font-size: 0.9em;"><small>{{catalog.description|truncatechars:150}}</small></p>
+    <h3>{{catalog.title}}</h3>
+    <p style="padding: 0.5rem 0; font-weight: 300;"><small>{{catalog.description|truncatechars:150}}</small></p>
     <footer style="margin-top: auto;">
       <hr style="width: 33%;">
       <a href="{% url 'catalog' catalog.pk %}">Ir al catalogo</a>

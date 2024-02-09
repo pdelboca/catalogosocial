@@ -1,5 +1,5 @@
 /*!
- * Sustainable CSS v0.0.7 (https://github.com/pdelboca/sustainable-css/)
+ * Sustainable CSS v0.0.8 (https://github.com/pdelboca/sustainable-css/)
  * Copyright 2023 by Patricio Del Boca - Licensed under MIT
  *
  * Sustainable CSS reuses system colors:
@@ -40,6 +40,10 @@ p {
 * https://www.joshwcomeau.com/css/rules-of-margin-collapse/
 */
     margin:0;
+}
+
+p, a, small, ol, ul, summary {
+    font-weight: 300;
 }
 
 p ~ p {
