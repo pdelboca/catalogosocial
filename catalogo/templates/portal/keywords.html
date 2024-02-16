@@ -2,10 +2,12 @@
 {% load static %}
 {% block content %}
 <main>
-    <h1>Datasets in {{request.resolver_match.kwargs.slug}}</h1>
+    <h1>Conjunto de datos en {{request.resolver_match.kwargs.slug}}</h1>
     <div style="text-align: right; font-size: smaller; margin-top: 1rem;"><i>{{datasets|length}} conjunto(s) de dato(s).</i></div>
+    <section style="display: flex; gap: 2rem; flex-direction: column; margin-top: 1rem;">
     {% for dataset in datasets %}
       {% include "portal/snippets/dataset.html" %}
     {% endfor %}
+    </section>
 </main>
 {% endblock %}
