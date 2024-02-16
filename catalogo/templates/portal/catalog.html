@@ -2,10 +2,10 @@
 
 {% block content %}
 <main>
-<section>
+<section style="background-color: canvastext; color: canvas; padding: 1rem; text-align: center;">
   <h1>{{ catalog.title }}</h1>
   {% if catalog.homepage %} <strong>Sitio Oficial:</strong> <a href="{{catalog.homepage}}">{{catalog.homepage}}</a> {% endif %}
-  <p>{{ catalog.description }}</p>
+  <p style="max-width: 80%; margin-inline: auto;">{{ catalog.description }}</p>
   <p>
   <div style="display: flex; justify-content: space-around;">
     <div><strong>Publicador: </strong>{{ catalog.publisher }}</div>
