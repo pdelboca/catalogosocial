@@ -4,7 +4,7 @@ Catálogo de datos abiertos de la República Argentina que apunta a servir como 
 
 https://catalogosocial.fly.dev/
 
-Basado en [django-dcat](https://github.com/pdelboca/django-dcat) y [Neat CSS](https://neat.joeldare.com/)
+Basado en [django-dcat](https://github.com/pdelboca/django-dcat) y [Sustainable CSS](https://github.com/pdelboca/sustainable-css/)
 
 ## Notas sobre el portal
 
@@ -17,6 +17,7 @@ Datos Abiertos de la República Argentina. (Por ejemplo: https://datos.gob.ar/da
 1. Crear un entorno virtual:
 
     `pip -m venv .venv`
+
 2. Instalar los requerimientos:
 
     `pip install -r requirements.txt -r dev-requirements.txt`
