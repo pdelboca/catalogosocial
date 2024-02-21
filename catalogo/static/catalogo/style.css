@@ -5,6 +5,12 @@
     font-family: sans-serif;
 }
 
+/* Default text-decoration-color saturates the distribution list. So I default. */
+a {
+    text-decoration-color: inherit;
+}
+
+
 body {
     font-size: 20px;
 }
@@ -19,7 +25,7 @@ section {
 }
 
 .tag {
-    background-color: var(--shadow-color);
+    background-color: var(--color-10);
     border-radius: 5px;
     font-size: 0.75rem;
     margin: 5px;
