@@ -4,9 +4,8 @@
 <main>
 <section style="text-align: center;">
   <h1 style="font-size: 3.5rem;">Catálogo Social</h1>
-  <p style="max-width: 80ch;">
-    Aquí se publican datos que han generado organizaciones civiles argentinas y datasets que
-    se comparten en las redes sociales y no pertenecen a ningún catálogo oficial.
+  <p style="font-size: larger;">
+    Datos de la sociedad civil argentina que no pertenecen a ningún catálogo oficial.
   </p>
 </section>
 <div style="display: flex; justify-content: space-around; margin-top: 30px; margin-bottom: 40px; text-align: center;">
@@ -28,12 +27,12 @@
 </search>
 
 {% if catalogs %}
-<section style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-around; margin: 40px 0px;">
+<section style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-around; margin: 40px 0px;">
   {% for catalog in catalogs %}
-  <article style="width: 250px; display: flex; flex-direction: column;" onmouseover="this.style.boxShadow='10px 5px 5px var(--shadow-color)'" onmouseout="this.style.boxShadow=''">
+  <article style="width: 250px; min-height: 300px; display: flex; flex-direction: column; border-top: 5px canvastext solid;">
     <h3>{{catalog.title}}</h3>
     <p style="padding: 0.5rem 0; font-weight: 300;"><small>{{catalog.description|truncatechars:150}}</small></p>
-    <footer style="margin-top: auto;">
+    <footer style="margin-top: auto; font-size: inherit;">
       <hr style="width: 33%;">
       <a href="{% url 'catalog' catalog.pk %}">Ir al catalogo</a>
     </footer>

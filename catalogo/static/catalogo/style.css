@@ -1,6 +1,6 @@
 :root {
     --color-10: rgba(23, 138, 126, 1);
-    --shadow-color: rgba(23, 138, 126, 0.5);
+    --tile-color: rgba(23, 138, 126, 10%);
     --max-width: 1000px;
     font-family: sans-serif;
 }
@@ -10,6 +10,11 @@ a {
     text-decoration-color: inherit;
 }
 
+/* Nueva idea para articles que aun no puse en sustainable.css*/
+article {
+    border: 0px;
+    background-color: var(--tile-color);
+}
 
 body {
     font-size: 20px;
