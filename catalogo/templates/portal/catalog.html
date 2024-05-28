@@ -32,6 +32,9 @@
     {% include 'portal/snippets/dataset.html' %}
   {% endfor %}
 </section>
+<section style="text-align: right;">
+    <a href="{% url 'feed' pk=catalog.pk %}" target="_blank"> DCAT Feed </a>
+</section>
 </main>
 {% endif %}
 {% endblock %}

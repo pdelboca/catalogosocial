@@ -1,4 +1,6 @@
 from django.db.models import Q
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from django.views import generic
 
 from dcat.models import Catalog, Dataset, Distribution
@@ -101,3 +103,9 @@ class KeywordSearchView(generic.ListView):
 
 class AboutView(generic.TemplateView):
     template_name = "portal/about.html"
+
+
+def feed(request, pk):
+    catalog = get_object_or_404(Catalog, pk=pk)
+    json = catalog.to_jsonld()
+    return JsonResponse(json)

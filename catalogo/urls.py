@@ -7,6 +7,7 @@ from . import views
 urlpatterns = [
     path("", views.IndexView.as_view(), name="index"),
     path("catalog/<int:pk>/", views.CatalogDetailView.as_view(), name="catalog"),
+    path("catalog/<int:pk>/feed", views.feed, name="feed"),
     path(
         "distribution/<int:pk>/",
         views.DistributionDetailView.as_view(),
